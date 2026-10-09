@@ -42,8 +42,23 @@ After the player has successfully entered Atlantis:
 
 Do not attempt ToA encounters yet. The Oceanus world is expected to be sparsely populated in the current 0.35 database.
 
+## Observed result — Hibernia
+
+User in-game test on the isolated Goal 2 test installation:
+
+- `Channeler Glasny` successfully teleported a Hibernia character to Hesperos using the restored Region 130 Oceanus destination.
+- The destination was not displayed in Glasny's normal dialogue menu, as expected from the current source.
+- The destination text needed the exact capitalization `Oceanus`; lower-case input did not trigger the teleport in this test. Preserve the canonical capitalization in future menu/dialogue work unless the lookup path is deliberately made case-insensitive.
+- The player entered Hesperos successfully and normal movement was available.
+- A temporary `/spawn` companion created in Hesperos worked normally in the user's test.
+- Albion Region 73 and Midgard Region 30 have not yet been tested in game and must not be treated as verified.
+
+Hibernia therefore satisfies the initial Phase A proof that OfflineDAoC's existing client/server region framework and temporary companion system can operate in Atlantis without an engine replacement.
+
 ## Pass criteria
 
 Phase A passes when at least one realm can enter its Atlantis region reliably, return to the normal world, and use a spawned companion without server errors or a stuck bot/group state.
 
-After the first realm passes, repeat Albion/Midgard/Hibernia. Then we can expose Oceanus in the normal teleporter dialogue and begin the controlled Atlantis population import.
+Hibernia has passed the core entry and spawned-companion checks. Return-to-normal-world behavior and the equivalent Albion/Midgard entries should still be checked before calling all three realm paths complete.
+
+The next controlled step is to restore a small, non-encounter Oceanus/Hesperos population slice before importing artifact or Master Level encounters.
